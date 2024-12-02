@@ -1,8 +1,12 @@
 import { Server } from "socket.io";
-import https from "https";
+import http from "http";
 import express from "express";
 
 const app = express();
+const privateKey = fs.readFileSync('/home/ec2-user/server.key', 'utf8');
+const certificate = fs.readFileSync('/home/ec2-user/server.cert', 'utf8');
+const credentials = { key: privateKey, cert: certificate };
+
 const server = https.createServer(credentials, app);
 
 const io = new Server(server, {
