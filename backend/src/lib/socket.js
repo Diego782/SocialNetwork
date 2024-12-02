@@ -1,7 +1,7 @@
 import { Server } from "socket.io";
 import http from "http";
 import express from "express";
-
+import fs from "fs";
 const app = express();
 const privateKey = fs.readFileSync('/home/ec2-user/server.key', 'utf8');
 const certificate = fs.readFileSync('/home/ec2-user/server.cert', 'utf8');
