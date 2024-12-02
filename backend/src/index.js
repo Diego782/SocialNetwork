@@ -16,7 +16,7 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 dotenv.config({ path: './var.env' }); 
-const server = http.createServer(app);
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(
